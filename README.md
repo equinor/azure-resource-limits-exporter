@@ -23,6 +23,10 @@ Change the `LOCATION` environment variable in `kubernetes/deployment.yaml` if ne
 
     kubectl apply -f kubernetes/deployment.yaml
 
+## Run locally
+
+    docker run -p 5000:5000 -e LOCATION=northeurope -e AZURE_TENANT_ID=xx -e AZURE_CLIENT_ID=xx -e AZURE_CLIENT_SECRET=xx -e SUBSCRIPTION_ID=xx stianovrevage/azure-resource-limits-exporter
+
 ## Development
 
 ### Build docker image

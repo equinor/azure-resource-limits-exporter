@@ -110,6 +110,10 @@ func Metrics(w http.ResponseWriter, r *http.Request) {
     return
   }
 
+  computeUsageClient.Authorizer = authorizer
+  storageUsageClient.Authorizer = authorizer
+  networkUsageClient.Authorizer = authorizer
+
   // Get Compute resources usage and limits
   for usage, err := computeUsageClient.ListComplete(context.Background(), os.Getenv("LOCATION")); usage.NotDone(); err = usage.NextWithContext(context.Background()) {
     if err != nil {

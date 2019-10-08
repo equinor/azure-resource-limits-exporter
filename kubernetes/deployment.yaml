@@ -1,44 +1,51 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: azure-resource-limit-exporter
+  name: azure-resource-limits-exporter
   labels:
-    app: azure-resource-limit-exporter
+    app: azure-resource-limits-exporter
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: azure-resource-limit-exporter
+      app: azure-resource-limits-exporter
   template:
     metadata:
       labels:
-        app: azure-resource-limit-exporter
+        app: azure-resource-limits-exporter
     spec:
       containers:
-      - name: azure-resource-limit-exporter
-        image: stianovrevage/azure-resource-limit-exporter
+      - name: azure-resource-limits-exporter
+        image: stianovrevage/azure-resource-limits-exporter
         ports:
         - containerPort: 5000
+        resources:
+          requests:
+            memory: "32Mi"
+            cpu: "5m"
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
         env:
         - name: LOCATION
           value: "northeurope"
         - name: AZURE_TENANT_ID
           valueFrom:
             secretKeyRef:
-              name: azure-credentials
+              name: azure-credentials-resource-limits
               key: AZURE_TENANT_ID
         - name: AZURE_CLIENT_ID
           valueFrom:
             secretKeyRef:
-              name: azure-credentials
+              name: azure-credentials-resource-limits
               key: AZURE_CLIENT_ID
         - name: AZURE_CLIENT_SECRET
           valueFrom:
             secretKeyRef:
-              name: azure-credentials
+              name: azure-credentials-resource-limits
               key: AZURE_CLIENT_SECRET
         - name: SUBSCRIPTION_ID
           valueFrom:
             secretKeyRef:
-              name: azure-credentials
+              name: azure-credentials-resource-limits
               key: SUBSCRIPTION_ID
