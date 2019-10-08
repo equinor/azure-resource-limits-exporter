@@ -1,12 +1,8 @@
-FROM golang:1.13-alpine AS build
+FROM stianovrevage/azure-sdk-golang AS build
 
 WORKDIR /build
 
 COPY cmd/main.go .
-
-RUN apk add --no-cache git
-
-RUN go get -u github.com/Azure/azure-sdk-for-go/...
 
 RUN go get github.com/gorilla/handlers \
     && go get github.com/dimchansky/utfbom \
