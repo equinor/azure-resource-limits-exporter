@@ -1,0 +1,23 @@
+name: Build image
+
+on: push
+
+#  pull_request:
+#    branches:
+#      - master
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    # timeout-minutes: # Default 360, 6 hours
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build
+      run: docker build -t test .
+      shell: bash
+    # - name: Build
+    #   uses: docker://hashicorp/terraform:0.12.11
+    #   with:
+    #     entrypoint: /bin/echo                                           # Docker ENTRYPOINT
+    #     args: The ${{ github.event_name }} event triggered this step.   # Docker CMD
