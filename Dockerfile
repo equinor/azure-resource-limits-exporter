@@ -17,8 +17,8 @@ RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app main.go
 
 FROM alpine:3
 
-RUN adduser -D user
-USER user
+RUN adduser -D 1000
+USER 1000
 
 WORKDIR /
 COPY --from=build /build/app .
