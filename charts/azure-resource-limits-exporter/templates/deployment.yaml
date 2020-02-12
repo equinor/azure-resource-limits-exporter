@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: azure-resource-limits-exporter
+  name: {{ .Release.Name }}
   labels:
     app: azure-resource-limits-exporter
     helm.sh/chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}

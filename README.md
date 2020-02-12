@@ -13,7 +13,7 @@ quota usage and limits and exposes data in Prometheus format.
 
 Use the output from above as well as `az account list --output table` to populate the fields below. AZURE_CLIENT_ID=appId and AZURE_CLIENT_SECRET=password from `az`.
 
-    helm repo add azure-resource-limits-exporter https://stianovrevage.github.io/azure-resource-limits-exporter/
+    helm repo add azure-resource-limits-exporter https://stianovrevage.github.io/azure-resource-limits-exporter/charts/
     helm repo update
 
     helm upgrade --install azure-limits azure-resource-limits-exporter/azure-resource-limits-exporter \
