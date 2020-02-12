@@ -3,7 +3,21 @@ entries:
   azure-resource-limits-exporter:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2020-02-12T12:44:33.1455505+01:00"
+    created: "2020-02-12T12:54:52.5030448+01:00"
+    description: Helm Chart for deploying Azure Resource Limits Exporter
+    digest: 9eabecb5bdf87817cffb13a50158fe1a20a0153da858cdc918ab72f22417ab61
+    maintainers:
+    - email: sovrevage@gmail.com
+      name: Stian Øvrevåge
+    name: azure-resource-limits-exporter
+    sources:
+    - https://github.com/StianOvrevage/azure-resource-limits-exporter
+    urls:
+    - azure-resource-limits-exporter-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2020-02-12T12:54:52.5021671+01:00"
     description: Helm Chart for deploying Azure Resource Limits Exporter
     digest: 50ae3e4a7be1376da54127cc91ca5225c99b0b8e1e63c46f5a48e108c31fe60c
     maintainers:
@@ -15,4 +29,4 @@ entries:
     urls:
     - azure-resource-limits-exporter-0.1.0.tgz
     version: 0.1.0
-generated: "2020-02-12T12:44:33.1439689+01:00"
+generated: "2020-02-12T12:54:52.5010387+01:00"
