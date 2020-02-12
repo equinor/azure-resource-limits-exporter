@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: {{ .Release.Name }}
   labels:
-    app: azure-resource-limits-exporter
+    app: {{ .Release.Name }}-azure-resource-limits-exporter
     helm.sh/chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     app.kubernetes.io/name: {{ .Chart.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
@@ -16,5 +16,5 @@ spec:
     protocol: TCP
     targetPort: 5000
   selector:
-    app: azure-resource-limits-exporter
+    app: {{ .Release.Name }}-azure-resource-limits-exporter
   type: ClusterIP

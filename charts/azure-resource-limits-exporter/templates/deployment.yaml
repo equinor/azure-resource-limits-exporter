@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ .Release.Name }}
   labels:
-    app: azure-resource-limits-exporter
+    app: {{ .Release.Name }}-azure-resource-limits-exporter
     helm.sh/chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     app.kubernetes.io/name: {{ .Chart.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
@@ -13,11 +13,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: azure-resource-limits-exporter
+      app: {{ .Release.Name }}-azure-resource-limits-exporter
   template:
     metadata:
       labels:
-        app: azure-resource-limits-exporter
+        app: {{ .Release.Name }}-azure-resource-limits-exporter
     spec:
       containers:
       - name: azure-resource-limits-exporter
@@ -35,25 +35,25 @@ spec:
         - name: LOCATION
           valueFrom:
             secretKeyRef:
-              name: azure-resource-limits-exporter-credentials
+              name: {{ .Release.Name }}
               key: LOCATION
         - name: AZURE_TENANT_ID
           valueFrom:
             secretKeyRef:
-              name: azure-resource-limits-exporter-credentials
+              name: {{ .Release.Name }}
               key: AZURE_TENANT_ID
         - name: AZURE_CLIENT_ID
           valueFrom:
             secretKeyRef:
-              name: azure-resource-limits-exporter-credentials
+              name: {{ .Release.Name }}
               key: AZURE_CLIENT_ID
         - name: AZURE_CLIENT_SECRET
           valueFrom:
             secretKeyRef:
-              name: azure-resource-limits-exporter-credentials
+              name: {{ .Release.Name }}
               key: AZURE_CLIENT_SECRET
         - name: SUBSCRIPTION_ID
           valueFrom:
             secretKeyRef:
-              name: azure-resource-limits-exporter-credentials
+              name: {{ .Release.Name }}
               key: SUBSCRIPTION_ID
