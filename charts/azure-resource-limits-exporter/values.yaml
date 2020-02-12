@@ -1,0 +1,7 @@
+location: northeurope
+
+azureCredentials:
+  tenantId:
+  clientId:
+  clientSecret: 
+  subscriptionId: 
