@@ -4,7 +4,7 @@ version: 0.1.2
 appVersion: 0.1.0
 description: Helm Chart for deploying Azure Resource Limits Exporter
 sources:
-  - https://github.com/StianOvrevage/azure-resource-limits-exporter
+  - https://github.com/equinor/azure-resource-limits-exporter
 maintainers:
   - name: Stian Øvrevåge
     email: sovrevage@gmail.com
