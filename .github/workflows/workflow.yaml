@@ -11,6 +11,6 @@ jobs:
     - name: Build and push
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
-        name: stianovrevage/azure-resource-limits-exporter
+        name: auroraprodacr.azurecr.io/azure-resource-limits-exporter
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
