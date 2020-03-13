@@ -1,6 +1,6 @@
 apiVersion: v2
 name: azure-resource-limits-exporter
-version: 0.1.2
+version: 0.1.3
 appVersion: 0.1.0
 description: Helm Chart for deploying Azure Resource Limits Exporter
 sources:

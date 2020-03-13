@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: azure-resource-limits-exporter
-        image: stianovrevage/azure-resource-limits-exporter
+        image: auroraprodacr.azurecr.io/azure-resource-limits-exporter
         ports:
         - containerPort: 5000
         resources:
