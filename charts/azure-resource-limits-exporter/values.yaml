@@ -1,7 +1,20 @@
+image:
+  repository: auroraprodacr.azurecr.io/azure-resource-limits-exporter
+  tag: v0.1.0
+  pullPolicy: IfNotPresent
+
+resources:
+  requests:
+    memory: "32Mi"
+    cpu: "5m"
+  limits:
+    memory: "128Mi"
+    cpu: "100m"
+
 location: northeurope
 
 azureCredentials:
   tenantId:
   clientId:
-  clientSecret: 
-  subscriptionId: 
+  clientSecret:
+  subscriptionId:
