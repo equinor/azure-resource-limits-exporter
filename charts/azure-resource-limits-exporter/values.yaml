@@ -18,3 +18,17 @@ azureCredentials:
   clientId:
   clientSecret:
   subscriptionId:
+
+affinity: {}
+
+nodeSelector: {}
+
+podAnnotations: {}
+
+podLabels: {}
+
+priorityClassName: ""
+
+securityContext: {}
+
+tolerations: []

@@ -41,6 +41,6 @@ Use the output from above as well as `az account list --output table` to populat
 
 ### Package helm charts
 
-    helm3 package charts/azure-resource-limits-exporter --destination ./charts
-    helm3 repo index ./charts
+    helm package charts/azure-resource-limits-exporter --destination ./charts
+    helm repo index ./charts
 
